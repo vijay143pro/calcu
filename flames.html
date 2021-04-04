@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" />
+    <style>
+
+        body{
+            background-image:url("https://static.vecteezy.com/system/resources/previews/000/233/676/large_2x/heart-background-vector.jpg");
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size:cover;
+        }
+        body, html {
+            height: 100%;
+            margin: 0;
+          }
+        #header{
+            animation-name: change;
+            animation-duration: 5s;
+            animation-iteration-count: infinite;
+            margin-top:10%;
+            border-radius: 25px;
+            margin-left: 20%;
+            margin-right: 20%;
+            text-align: center;
+            background-color:black;
+            color:floralwhite;
+            padding: 2%;
+            font-style:italic;
+        }
+        @-webkit-keyframes change{
+            0%{ background-color: black;}
+            25%{ background-color: rgb(199, 8, 119);}
+            50%{ background-color: rgb(84, 18, 236);}
+            75%{ background-color: rgb(25, 198, 241);}
+            100%{ background-color: rgb(188, 241, 40);}
+        }
+        input{
+            margin-left: 15%;
+            margin-top: 5%;
+            width: 25%;
+            height: 30px;
+            border-radius: 10%;
+            padding: 0.5%;
+            background: linear-gradient(orange,yellow);
+        }
+        #com{
+            color: aqua;
+        }
+        .btn1{
+            animation-name: sub;
+            border-radius: 20px;
+            border-color: black;
+            padding: 2%;
+            margin-left: 39.5%;
+            background: linear-gradient(red,blue);
+            animation-duration: 0.5s;
+            animation-iteration-count: infinite;
+            margin-top: 2.5%;
+            margin-left: 45%;
+        }
+        @-webkit-keyframes sub{
+            from{
+                background: linear-gradient(red,blue);
+            }
+            to{
+                background: linear-gradient(blue,red);
+            }
+        }
+        .container{
+            margin-left: 10%;
+            margin-right: 10%;
+            text-align: center;
+            background-color: black;
+            color:bisque;
+            border-radius: 20px;
+            opacity: 0.7;
+        }
+        .btn2{
+            margin-top: 2%;
+            padding: 1%;
+            margin-left: 45%;
+            background: linear-gradient(white,red);
+            animation-name: btn2;
+            animation-duration: 0.5s;
+            animation-iteration-count: infinite;
+        }    
+        @-webkit-keyframes btn2{
+            from{
+                background: linear-gradient(white,red);
+            }
+            to{
+                background: linear-gradient(red,white);
+            }
+        }
+    </style>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1 id="header">F L A M E S</h1>
+    <div class="cnames">
+        <input type="text" id="name1"placeholder="Enter your name">
+        <input type="text" id="name2"placeholder="Enter lover name">
+        <button type="button" onclick="submit()" class="btn1">Predict</button>
+    </div>
+   <div class="container">
+       <h4 id="sn1"></h4>
+    <h4 id="sn2"></h4>
+    <h2 id="flames"></h2>
+    <h4 id="com"></h4>
+</div>
+    <a href="index.html"><h3><button class="btn2"><<-Back</button></h3></a><br> 
+</body>
+<script>
+    var c=document.getElementById("com");  
+    var love1=document.getElementById("name1");
+    var love2=document.getElementById("name2");
+    var s1=document.getElementById("sn1");
+    var s2=document.getElementById("sn2");
+    function submit(){
+        if(love1.value=="" || love2.value==""){
+            alert("mr/mrs "+love1.value+" Both names should fillout");
+        }
+        else if(love1.value==love2.value){
+            alert("mr/mrs "+love1.value+" same names are not allowed");
+        }
+        else{
+            s1.innerHTML="your name is "+love1.value;
+            s2.innerHTML="Your beloved name is "+love2.value;
+            var random=["Friend","Love","Affection","wife/hubby(Marriage)","Enemy","Sister"];
+            var r=document.getElementById("flames").innerHTML=love2.value+" is your "+random[Math.ceil(Math.random()*random.length-1)];
+            c.innerHTML="&#128540 Dont get angry ! Eat jangry !  &#128540";
+        }
+    }
+</script>
+</html>

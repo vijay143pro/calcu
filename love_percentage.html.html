@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!--css-->
+ <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" />
+    <style>
+        
+        body{
+            background-image:url("https://static.vecteezy.com/system/resources/previews/000/233/676/large_2x/heart-background-vector.jpg");
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size:cover;
+        }
+        body, html {
+            height: 100%;
+            margin: 0;
+          }
+        a{
+            text-decoration: none;
+            color: black;
+            text-align: center;
+            }
+        .btn2{
+            animation-name: btn2;
+            animation-duration: 0.5s;
+            animation-iteration-count: infinite;
+            margin-left: -5%;
+            background: linear-gradient(white,red);
+        }    
+        @-webkit-keyframes btn2{
+            from{
+                background: linear-gradient(white,red);
+            }
+            to{
+                background: linear-gradient(red,white);
+            }
+        }
+        .cal{
+            padding: 2%;
+            border: 2px;
+            background-color:rgb(149, 240, 29);
+            margin-top: 5%;
+            margin-left: 20%;
+            margin-right: 20%;
+            border-radius: 5%;
+        }
+        #header{
+            animation-name: exp;
+            animation-duration: 5s;
+            animation-iteration-count: infinite;
+            font-family:sans-serif;
+            margin-top: 10%;
+            text-align: center;
+            background-color: darkslategrey;
+            color:rgb(243, 69, 26);
+            padding: 2%;
+            border-radius: 25px;
+            margin-left: 20%;
+            margin-right: 20%;
+            font-style: italic;
+        }
+        @-webkit-keyframes exp{
+            0%   {background-color: rgb(48, 238, 23);}
+  25%  {background-color: yellow;}
+  50%  {background-color: blue;}
+  100% {background-color: rgb(7, 7, 7);}
+        }
+        .lnames{
+            margin-right: 20%;
+            border: 2px;
+            margin-left: 20%;
+        }
+        input{
+            margin-left: 15%;
+            margin-top: 5%;
+            width: 25%;
+            height: 30px;
+            border-radius: 10%;
+            padding: 0.5%;
+            background: linear-gradient(orange,yellow);
+        }        
+        .btn1{
+            animation-name: btn1;
+            padding: 2%;
+            margin-left: 39.5%;
+            background: linear-gradient(red,blue);
+            animation-duration: 0.5s;
+            animation-iteration-count: infinite;
+            margin-top: 2.5%;
+        }
+        @-webkit-keyframes btn1{
+            from{
+            background:linear-gradient(red,blue)
+        }
+        to{
+            background: linear-gradient(blue,red);
+        }
+        }
+        .container{
+            opacity:0.8;
+            text-align: center;
+            background-color:rgba(70, 68, 68, 0.932);
+            color:antiquewhite;
+            border-radius: 5%;
+            text-decoration: solid;
+        }
+        #com{
+            color: aqua;
+        }
+    </style>
+</head>
+<body>
+    <h1 id="header">L o v e C a l c u l a t o r</h1><br>
+    <div class="lnames">
+        <input type="text" id="name1" placeholder="Your name">
+        <input type="text" id="name2" placeholder="Lover name"><br><br>
+        <button type="button" onclick="submit()" class="btn1">Calculate</button>
+    </div><br><br>
+    <div class="container">
+    <h4 id="nam1"></h4>
+    <h4 id="nam2"></h4>
+    <h2 id="per"></h2>
+    <h4 id="com"></h4>
+    <div id="n"></div></div></div>
+    <a href="index.html"><h3><button class="btn2"><<-Back</button></h3></a>
+</body>
+<script>   
+var x=document.getElementById("name1");
+var y=document.getElementById("name2");
+var x1=document.getElementById("nam1");
+var y2=document.getElementById("nam2");
+var p=document.getElementById("per");
+var n1=document.getElementById("n");
+var c=document.getElementById("com");  
+function submit(){
+    if(x.value=="" || y.value==""){
+        alert("mr/mrs "+x.value+" both boxes must fillout");
+    }
+    else if(x.value==y.value){
+        alert("mr/mrs"+x.value+" Same names are not allowed");
+    }
+    else{
+        var n2=Math.ceil(Math.random()*100);
+        n1=n2;
+        x1.innerHTML="Your name is "+x.value;
+        y2.innerHTML="Your beloved name is "+y.value;
+        p.innerHTML="The love percentage between you and "+y.value+" is "+ n1+" %";
+        c.innerHTML="&#128540 Dont get angry ! Eat jangry !  &#128540";
+    }
+}
+
+</script>
+<!--jquery-->
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+<!--js-->
+
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+<!--Font awasome-->
+    <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/solid.js" integrity="sha384-tzzSw1/Vo+0N5UhStP3bvwWPq+uvzCMfrN1fEFe+xBmv1C/AtVX5K0uZtmcHitFZ" crossorigin="anonymous"></script>
+    <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/fontawesome.js" integrity="sha384-6OIrr52G08NpOFSZdxxz1xdNSndlD4vdcf/q2myIUVO0VsqaGHJsB0RaBE01VTOY" crossorigin="anonymous"></script>
+
+
+
+
+<!-- jQuery CDN - Slim version (=without AJAX) -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+
+
+
+
+    <!-- Popper.JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js" integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ" crossorigin="anonymous"></script>
+    <!-- Bootstrap JS -->
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js" integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm" crossorigin="anonymous"></script>
+</html>
